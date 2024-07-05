@@ -1,0 +1,60 @@
+
+<% layout ("/layouts/boilerplate")%>
+<div class="row mt-3">
+    <h3>Edit your listing</h3>
+    
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+        
+        <div class="mb-3">
+            <label for="title" class="form-label">title</label>
+            <input  name="listing[title]" value="<%= listing.title %>" type="text" class="form-control"/>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <textarea name="listing[description]" class="form-control"><%= listing.description %></textarea>
+
+        </div>
+        
+
+        <div class="mb-3">
+            <label for="image" class="form-label">upload New image</label>
+            <input  name="listing[image]"  type="file" class="form-control"/>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input  name="listing[price]" value="<%= listing.price %>" type="number" class="form-control"/>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="country" class="form-label">country</label>
+            <input  name="listing[country]" value="<%= listing.country %>" type="text" class="form-control"/>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">location</label>
+            <input  name="listing[location]" value="<%= listing.location %>" type="text" class="form-control"/>
+
+
+        </div>
+
+        <!-- <input  name="listing[title]" value="<%= listing.title %>" type="text"/>
+        <br/><br> -->
+        <!-- <textarea name="listing[description]"><%= listing.description %></textarea>
+        <br/><br> -->
+        <!-- <input  name="listing[image]" placeholder="enter image/url" type="text"/>
+        <br> -->
+        <!-- <br/><br>
+        <input  name="listing[price]" value="<%= listing.price %>" type="number/"/>
+        <br><br> -->
+        <!-- <input  name="listing[country]" value="<%= listing.country %>" type="text"/>
+        <br/><br> -->
+        <!-- <input  name="listing[location]" value="<%= listing.location %>" type="text"/> -->
+        <button class="btn btn-dark edit-btn mt-3">Edit</button>
+</form>
+</div>
